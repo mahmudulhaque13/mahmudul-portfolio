@@ -32,11 +32,20 @@ export default function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      const result: { message?: string } = await response
+        .json()
+        .catch(() => ({}));
 
       if (!response.ok) {
         throw new Error(result.message || "Message could not be sent.");
       }
+
+      setStatus({
+        type: "success",
+        message:
+          result.message || "Your message has been submitted successfully.",
+      });
+      form.reset();
 
       setStatus({
         type: "success",

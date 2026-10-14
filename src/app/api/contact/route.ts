@@ -2,11 +2,20 @@ import { Resend } from "resend";
 
 export async function POST(request: Request) {
   try {
+    if (!request.headers.get("content-type")?.includes("application/json")) {
+      return Response.json(
+        { message: "Content-Type must be application/json." },
+        { status: 415 },
+      );
+    }
+
     const apiKey = process.env.RESEND_API_KEY;
     const recipient = process.env.RESEND_TO_EMAIL;
     const sender = process.env.RESEND_FROM_EMAIL;
 
     if (!apiKey || !recipient || !sender) {
+      console.error("Contact email environment variables are missing.");
+
       return Response.json(
         { message: "Email service is not configured." },
         { status: 500 },
@@ -15,8 +24,11 @@ export async function POST(request: Request) {
 
     const body: unknown = await request.json();
 
-    if (!body || typeof body !== "object") {
-      return Response.json({ message: "Invalid request." }, { status: 400 });
+    if (!body || typeof body !== "object" || Array.isArray(body)) {
+      return Response.json(
+        { message: "Invalid request body." },
+        { status: 400 },
+      );
     }
 
     const data = body as Record<string, unknown>;
@@ -27,21 +39,20 @@ export async function POST(request: Request) {
     const message = typeof data.message === "string" ? data.message.trim() : "";
     const website = typeof data.website === "string" ? data.website.trim() : "";
 
-    // Honeypot: silently discard likely bot submissions.
+    // Silently discard likely bot submissions.
     if (website) {
       return Response.json({ message: "Message received." });
     }
 
     if (
-      !name ||
-      !email ||
-      !subject ||
-      !message ||
+      name.length < 2 ||
       name.length > 100 ||
       email.length > 254 ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+      subject.length < 3 ||
       subject.length > 150 ||
-      message.length > 5000 ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+      message.length < 10 ||
+      message.length > 5000
     ) {
       return Response.json(
         { message: "Please enter valid details in every field." },
@@ -51,7 +62,7 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
 
-    const { error } = await resend.emails.send({
+    const { data: emailData, error } = await resend.emails.send({
       from: sender,
       to: [recipient],
       replyTo: email,
@@ -66,8 +77,8 @@ export async function POST(request: Request) {
       ].join("\n"),
     });
 
-    if (error) {
-      console.error("Resend email error:", error);
+    if (error || !emailData?.id) {
+      console.error("Resend email error:", error ?? "No email ID returned.");
 
       return Response.json(
         { message: "Email could not be sent. Please try again later." },
@@ -76,7 +87,9 @@ export async function POST(request: Request) {
     }
 
     return Response.json(
-      { message: "Your message has been sent successfully." },
+      {
+        message: "Your message has been accepted for email delivery.",
+      },
       { status: 200 },
     );
   } catch (error) {
