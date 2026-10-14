@@ -6,8 +6,8 @@ export type Project = {
   description: string;
   stack: string[];
   image: string;
-  live: string;
-  clientRepo: string;
+  live?: string;
+  clientRepo?: string;
   backendRepo?: string;
   backendApi?: string;
   role: string;
@@ -57,7 +57,6 @@ export const projects: Project[] = [
       "Continue refining admin detail views, courier profile workflows and invoice delivery based on test findings.",
     ],
   },
-
   {
     slug: "rentnest",
     name: "RentNest",
@@ -92,6 +91,37 @@ export const projects: Project[] = [
       "Expand automated tests for authentication and rental workflows.",
       "Improve production API monitoring and error visibility.",
       "Refine property discovery, search and filtering as needed.",
+    ],
+  },
+  {
+    slug: "ph-healthcare",
+    name: "PH-Healthcare",
+    eyebrow: "HEALTHCARE MANAGEMENT",
+    short:
+      "A healthcare management project focused on structured modules and role-based workflows.",
+    description:
+      "PH-Healthcare is a healthcare management project associated with modular backend architecture, authentication, role-based access and database-driven workflows.",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+    ],
+    image: "/images/healthcare.svg",
+    role: "Full-stack development",
+    challenges: [
+      "Organizing application features into maintainable modules.",
+      "Structuring authentication and role-based access.",
+      "Connecting API workflows with database operations.",
+    ],
+    improvements: [
+      "Add comprehensive automated tests.",
+      "Improve documentation and API observability.",
+      "Refine the user interface and production deployment.",
     ],
   },
 ];
