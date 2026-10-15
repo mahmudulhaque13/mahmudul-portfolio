@@ -2,43 +2,43 @@
 
 A modern, responsive portfolio website showcasing my projects, technical skills, and experience as a Full-Stack JavaScript Developer.
 
-🌐 **Live Portfolio:** [mahmudul-portfolio-xi.vercel.app](https://mahmudul-portfolio-xi.vercel.app)
+🌐 **Live Portfolio:** [mahmudul-portfolio-xi.vercel.app](https://mahmudul-portfolio-xi.vercel.app/)
 
 ## Overview
 
-This portfolio is built to present my development work, technical capabilities, and selected projects in a clean, responsive interface. It includes a homepage, dedicated project detail pages, project artwork, and a resume download.
+This portfolio presents my development work, technical capabilities, and selected projects through a clean, responsive interface. It includes a homepage, dedicated project detail pages, project artwork, and a resume download.
 
 ## Features
 
-- Responsive portfolio layout for desktop, tablet, and mobile
+- Responsive layout for desktop, tablet, and mobile
 - Dedicated project detail pages
 - Project descriptions and technology tags
 - Project artwork and visual presentation
 - Resume download
 - Navigation between portfolio sections and project pages
-- Dark-themed, modern user interface
+- Dark-themed user interface
 
 ## Featured Projects
 
-### ParcelRelay
+### ParcelRelay — Courier & Logistics Platform
 
-A courier and logistics management platform.
+A full-stack platform for shipment management, tracking, courier operations, and administrative workflows.
 
-- [Live Application](https://parcel-relay-frontend.vercel.app)
-- [Frontend Repository](https://github.com/mahmudulhaque13/parcel-relay-frontend)
-- [Backend Repository](https://github.com/mahmudulhaque13/parcel-relay-backend)
+- **Live Application:** [ParcelRelay](https://parcel-relay-frontend.vercel.app/)
+- **Frontend Repository:** [GitHub](https://github.com/mahmudulhaque13/parcel-relay-frontend)
+- **Backend Repository:** [GitHub](https://github.com/mahmudulhaque13/parcel-relay-backend)
 
-### RentNest
+### RentNest — Rental Marketplace
 
-A rental marketplace project.
+A full-stack rental marketplace project.
 
-- [Live Application](https://rentnest-frontend-lyart.vercel.app/)
-- [Frontend Repository](https://github.com/mahmudulhaque13/rentnest-frontend)
-- [Backend Repository](https://github.com/mahmudulhaque13/rentnest-backend)
+- **Live Application:** [RentNest](https://rentnest-frontend-lyart.vercel.app/)
+- **Frontend Repository:** [GitHub](https://github.com/mahmudulhaque13/rentnest-frontend)
+- **Backend Repository:** [GitHub](https://github.com/mahmudulhaque13/rentnest-backend)
 
 ### PH-Healthcare
 
-A healthcare-related project featured as part of my technical portfolio. See the project page for its description and relevant references.
+A healthcare-related project featured in my portfolio. See the project detail page for its description and relevant references.
 
 ## Tech Stack
 
@@ -63,10 +63,15 @@ A healthcare-related project featured as part of my technical portfolio. See the
 
 ### Installation
 
-Clone the repository and navigate to the project directory:
+Clone the repository:
 
 ```bash
 git clone https://github.com/mahmudulhaque13/mahmudul-portfolio.git
+```
+
+Navigate to the project directory:
+
+```bash
 cd mahmudul-portfolio
 ```
 
@@ -100,10 +105,10 @@ npm run start
 
 ## Contact
 
-- **Portfolio:** [mahmudul-portfolio-xi.vercel.app](https://mahmudul-portfolio-xi.vercel.app)
+- **Portfolio:** [mahmudul-portfolio-xi.vercel.app](https://mahmudul-portfolio-xi.vercel.app/)
 - **GitHub:** [mahmudulhaque13](https://github.com/mahmudulhaque13)
 - **LinkedIn:** [Mahmudul Haque](https://www.linkedin.com/in/mahmudul-haque-425113420)
-- **Email:** m.h.upal13@gmail.com
+- **Email:** [m.h.upal13@gmail.com](mailto:m.h.upal13@gmail.com)
 
 ---
 
