@@ -8,6 +8,12 @@ A modern, responsive portfolio website showcasing my projects, technical skills,
 
 This portfolio presents my development work, technical capabilities, and selected projects through a clean, responsive interface. It includes a homepage, dedicated project detail pages, project artwork, and a resume download.
 
+## Screenshots
+
+### Homepage
+
+![Mahmudul Haque Portfolio Homepage](./screenshots/portfolio-home.png)
+
 ## Features
 
 - Responsive layout for desktop, tablet, and mobile
