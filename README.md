@@ -12,7 +12,7 @@ This portfolio presents my development work, technical capabilities, and selecte
 
 ### Homepage
 
-![Mahmudul Haque Portfolio Homepage](./screenshots/portfolio-home.png)
+![Mahmudul Haque Portfolio Homepage](./portfolio-home.png)
 
 ## Features
 
